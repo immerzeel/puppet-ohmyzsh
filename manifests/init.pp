@@ -33,18 +33,15 @@
 #
 # Copyright 2014 Pascal Immerzeel, unless otherwise noted.
 #
-class ohmyzsh(
+class ohmyzsh (
 	$path   = $ohmyzsh::params::path,
 	$source = $ohmyzsh::params::source,
 	$user   = $ohmyzsh::params::user
-) {
-	include ohmyzsh::params
-
+) inherits ohmyzsh::params {
 	validate_string($user, $path, $source)
 
 	package {'zsh':
-		ensure => installed,
-		provider => apt
+		ensure => installed
 	}
 
 	vcsrepo {"${path}/.oh-my-zsh":
@@ -54,7 +51,6 @@ class ohmyzsh(
 	}
 
 	user {$user:
-		shell => "bin/zsh",
-		require => Package['zsh']
+		shell => "bin/zsh"
 	}
 }
