@@ -8,4 +8,7 @@ description 'Install Oh My Zsh with Z Shell and set it to default shell'
 project_page 'http://github.com/immerzeel/puppet-ohmyzsh'
 
 ## Add dependencies, if any:
-dependency 'puppetlabs/vcsrepo', '>= 1.2.0'
+dependency 'puppetlabs/apt', '>= 1.4.2'
+dependency 'puppetlabs/stdlib', '>= 3.2.1'
+dependency 'puppetlabs/vcsrepo', '>= 0.2.0'
+
