@@ -1,5 +1,5 @@
 class ohmyzsh::params {
-	$source = 'git://github.com/robbyrussel/oh-my-zsh.git'
+	$source = 'git://github.com/robbyrussell/oh-my-zsh.git'
 
 	# On virtual machine, default to 'vagrant'.
 	if $::is_virtual {
