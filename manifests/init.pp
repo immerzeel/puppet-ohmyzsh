@@ -37,8 +37,9 @@ class ohmyzsh (
 	$path   = $ohmyzsh::params::path,
 	$source = $ohmyzsh::params::source,
 	$user   = $ohmyzsh::params::user
+	$group  = $ohmyzsh::params::group
 ) inherits ohmyzsh::params {
-	validate_string($user, $path, $source)
+	validate_string($user, $path, $source, $group)
 
 	package {'zsh':
 		ensure => installed
@@ -46,6 +47,8 @@ class ohmyzsh (
 
 	vcsrepo {"${path}/.oh-my-zsh":
 		ensure   => present,
+		group    => $group,
+		owner    => $user,
 		provider => git,
 		source   => $source
 	}
