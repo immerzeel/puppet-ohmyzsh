@@ -36,7 +36,7 @@
 class ohmyzsh (
 	$path   = $ohmyzsh::params::path,
 	$source = $ohmyzsh::params::source,
-	$user   = $ohmyzsh::params::user
+	$user   = $ohmyzsh::params::user,
 	$group  = $ohmyzsh::params::group
 ) inherits ohmyzsh::params {
 	validate_string($user, $path, $source, $group)
