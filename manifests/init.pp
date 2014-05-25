@@ -54,6 +54,6 @@ class ohmyzsh (
 	}
 
 	user {$user:
-		shell => "bin/zsh"
+		shell => $ohmyzsh::params::zsh
 	}
 }
